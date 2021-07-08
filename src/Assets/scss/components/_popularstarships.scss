@@ -24,9 +24,11 @@
     }
   }
   &__body {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(36rem, 1fr));
-    grid-gap: 5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 5rem;
+    column-gap: 5rem;
   }
 }
 .button {
@@ -38,6 +40,7 @@
   cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
   border: 1px solid $primary-black;
   @include ease-t;
   justify-self: flex-end;
@@ -63,4 +66,12 @@
     color: black;
     background-color: transparent;
   }
+}
+
+.view__more {
+  background: transparent;
+  width: 51.7rem;
+  margin: 4rem auto;
+  border-radius: 6px;
+  text-transform: uppercase;
 }

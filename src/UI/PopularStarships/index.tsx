@@ -17,6 +17,9 @@ const PopularStarships = () => {
         <Card />
         <Card />
       </div>
+      <div>
+        <button className="button view__more ">View More</button>
+      </div>
     </div>
   );
 };

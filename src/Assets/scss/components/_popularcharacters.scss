@@ -1,0 +1,57 @@
+.characters {
+  padding: 4rem 6rem 4rem 6rem !important;
+
+  .category__body {
+    column-gap: 2rem !important;
+    row-gap: 5rem !important;
+  }
+  .character__card {
+    height: 41rem;
+    display: flex;
+
+    &--image {
+      width: 36rem;
+      position: relative;
+
+      flex: none;
+      img {
+        @include object-cover;
+      }
+    }
+
+    &--body {
+      width: 27rem;
+      background: $secondary-ash;
+      padding: 2rem;
+      color: $text-ash;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .title {
+        font-size: 1.8rem;
+        color: $text-ash-title;
+      }
+
+      .subtitle {
+        margin-top: 0.6rem;
+        font-style: italic;
+        font-weight: 300;
+      }
+
+      .content {
+        margin-top: 2rem;
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+      }
+      .read_more {
+        margin-top: 1rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $text-ash-title;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+  }
+}

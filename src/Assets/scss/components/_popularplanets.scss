@@ -1,0 +1,30 @@
+.planets {
+  .planet__card {
+    width: 36rem;
+    height: 46rem;
+
+    position: relative;
+
+    img {
+      @include object-cover // position: absolute;
+;
+    }
+
+    &--body {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: $primary-black;
+      color: white;
+      padding: 2rem;
+
+      h3 {
+        font-size: 1.6rem;
+        text-align: center;
+        font-weight: 300;
+        background: linear-gradient();
+      }
+    }
+  }
+}
