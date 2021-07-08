@@ -1,0 +1,66 @@
+.category {
+  padding: 4rem 10rem 4rem 10rem;
+  &__header-container {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  &__header {
+    padding-bottom: 1rem;
+    position: relative;
+    font-size: 2rem;
+    letter-spacing: 0.08rem;
+    color: $tertiary-ash;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      margin: 1rem auto;
+      width: 10rem;
+      height: 0.3rem;
+      transform: translateX(-50%);
+      left: 50%;
+      background-color: $tertiary-ash;
+    }
+  }
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(36rem, 1fr));
+    grid-gap: 5rem;
+  }
+}
+.button {
+  padding: 1.5rem 4rem;
+
+  border: none;
+  outline: none;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid $primary-black;
+  @include ease-t;
+  justify-self: flex-end;
+
+  &__icon {
+    margin-left: 1rem;
+    transform: rotateY(180deg);
+    margin-top: 0.2rem;
+  }
+
+  &:focus,
+  &:active {
+    border: none;
+    outline: none;
+  }
+}
+
+.btn-primary {
+  color: $primary-white;
+  background-color: $primary-black;
+
+  &:hover {
+    color: black;
+    background-color: transparent;
+  }
+}

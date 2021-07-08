@@ -1,0 +1,72 @@
+.logo {
+  width: 13rem;
+}
+
+.jumbotron {
+  background-image: url("../../Images/hero-banner.jpg");
+  background-position: center;
+  background-size: cover;
+  padding: 4rem;
+  height: 61.6rem;
+  color: $primary-white;
+
+  &__sub {
+    color: $primary-ash;
+    margin-top: 2rem;
+    font-size: 2rem;
+    width: 47rem;
+    text-align: center;
+    line-height: 3rem;
+  }
+
+  &__body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    // border: 1px solid white;
+    padding-bottom: 6rem;
+
+    .header {
+      display: flex;
+      align-items: center;
+      border-bottom: 4px solid $primary-ash;
+      padding-bottom: 1rem;
+
+      &__caption {
+        font-size: 4rem;
+        font-weight: 800;
+        margin-left: 2rem;
+      }
+    }
+  }
+
+  .input {
+    width: 76rem;
+    position: relative;
+    margin-top: 3rem;
+
+    &__icon {
+      color: black;
+      position: absolute;
+      display: flex;
+      height: 100%;
+      left: 6rem;
+    }
+    &__field {
+      width: 100%;
+      padding: 1.5rem;
+      border-radius: 4px;
+      background-color: $primary-ash;
+      padding-left: 9rem;
+      font-size: 1.6rem;
+
+      &:focus,
+      &:active {
+        outline: none !important;
+        // border: none !important;
+      }
+    }
+  }
+}
