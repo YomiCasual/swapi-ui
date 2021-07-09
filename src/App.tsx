@@ -1,17 +1,22 @@
+import { lazy, Suspense } from "react";
+import { Switch, Route } from "react-router-dom";
 import "./App.scss";
-import Homepage from "./Pages/Homepage/index";
-import PopularStarships from "./UI/PopularStarships/index";
-import PopularPlanets from "./UI/PopularPlanets/index";
-import PopularCharacters from "./UI/PopularCharacters/index";
+
+const Homepage = lazy(() => import("./Pages/Homepage"));
+const About = lazy(() => import("./Pages/About"));
+
+const Loading = () => <h3>Loading...</h3>;
 
 function App() {
   return (
-    <div>
-      <Homepage />
-      <PopularStarships />
-      <PopularPlanets />
-      <PopularCharacters />
-    </div>
+    <>
+      <Suspense fallback={Loading}>
+        <Switch>
+          <Route path="/home" component={Homepage} />
+          <Route path="/about" component={About} />
+        </Switch>
+      </Suspense>
+    </>
   );
 }
 

@@ -1,8 +1,15 @@
-import Jumbotron from "../../UI/Jumbotron";
+import Hero from "../../UI/Hero";
+import PopularStarships from "../../UI/PopularStarships";
+import PopularPlanets from "../../UI/PopularPlanets";
+import PopularCharacters from "../../UI/PopularCharacters";
+
 const Homepage = () => {
   return (
     <div>
-      <Jumbotron />
+      <Hero />
+      <PopularStarships />
+      <PopularPlanets />
+      <PopularCharacters />
     </div>
   );
 };

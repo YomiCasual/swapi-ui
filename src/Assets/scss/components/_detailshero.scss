@@ -1,0 +1,44 @@
+.hero__details {
+  background-image: url("../../Images/starship-1.jpg");
+
+  background-size: contain !important;
+
+  position: relative;
+
+  &--body {
+    position: absolute;
+    bottom: 8rem;
+    right: 7rem;
+    left: 7rem;
+  }
+  .details__banner {
+    display: flex;
+    width: 100%;
+
+    justify-content: space-between;
+    align-items: center;
+    .name__tag {
+      display: flex;
+
+      align-items: center;
+    }
+
+    h3 {
+      font-size: 2.5rem;
+    }
+
+    .second__bracket {
+      transform: rotateY(180deg);
+    }
+
+    .navigation__icons {
+      .navg__icon {
+        margin-right: 2rem;
+        cursor: pointer;
+      }
+      .right {
+        transform: rotateY(180deg);
+      }
+    }
+  }
+}
