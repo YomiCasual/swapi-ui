@@ -1,25 +1,53 @@
 import Logo from "./../../../Assets/Images/logo.png";
 import Typography from "../../../Components/Typography";
 import { IconType } from "../../../Assets/Icons";
+import { Link } from "react-router-dom";
 // import { SearchIcon } from "../../Assets/Icons";
 
-const HeroDetails = () => {
+export type HeroDetailsProps = {
+  aboutDetails: any;
+};
+
+const HeroDetails: React.FC<HeroDetailsProps> = ({ aboutDetails }) => {
+
+  const getStringUrl = aboutDetails.url.match(/[^0-9]+/g)[0];
+  const getNumUrl = parseInt(aboutDetails.url.match(/[0-9]+/g));
+  const ValidNumUrl = isNaN(getNumUrl) || 0 ? 6 : getNumUrl;
+
   return (
-    <div className="hero hero__details">
-      <nav className="nav">
-        <img src={Logo} alt="" className="nav__logo logo" />
-      </nav>
+    <div 
+    
+    className="hero hero__details">
+      <Link to="/home">
+        <nav className="nav">
+          <img src={Logo} alt="" className="nav__logo logo" />
+        </nav>
+      </Link>
 
       <div className="hero__details--body">
         <div className="details__banner">
           <div className="name__tag">
             <BracketSvg />
-            <Typography variant="h3">Corellian Scout</Typography>
+            <Typography variant="h3">{aboutDetails.name}</Typography>
             <BracketSvg classes="second__bracket" />
           </div>
           <div className="navigation__icons">
-            <NavigationIcon classes="navg__icon" />
-            <NavigationIcon classes="navg__icon right" />
+            <Link
+              to={{
+                pathname: "/about",
+                state: `${getStringUrl}${ValidNumUrl - 1}/`,
+              }}
+            >
+              <NavigationIcon classes="navg__icon" />
+            </Link>
+            <Link
+              to={{
+                pathname: "/about",
+                state: `${getStringUrl}${ValidNumUrl + 1}/`,
+              }}
+            >
+              <NavigationIcon classes="navg__icon right" />
+            </Link>
           </div>
         </div>
       </div>

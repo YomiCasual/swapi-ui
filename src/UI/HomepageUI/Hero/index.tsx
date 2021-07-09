@@ -1,6 +1,6 @@
-import Logo from "./../../Assets/Images/logo.png";
-import Typography from "../../Components/Typography/index";
-import { SearchIcon } from "../../Assets/Icons";
+import Logo from "./../../../Assets/Images/logo.png";
+import Typography from "../../../Components/Typography/index";
+import { SearchIcon } from "../../../Assets/Icons";
 
 const Hero = () => {
   return (

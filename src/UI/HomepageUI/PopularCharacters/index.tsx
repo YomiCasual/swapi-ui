@@ -1,5 +1,5 @@
-import Typography from "../../Components/Typography";
-import Character1 from "../../Assets/Images/character-1.jpg";
+import Typography from "../../../Components/Typography";
+import Character1 from "../../../Assets/Images/character-1.jpg";
 
 const PopularCharacters = () => {
   return (

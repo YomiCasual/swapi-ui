@@ -1,11 +1,13 @@
 import Typography from "../../../Components/Typography/index";
-import Card from "../../../Components/Card/index";
-const AboutContent = () => {
+import { HeroDetailsProps } from "../HeroDetails";
+// import Card from "../../../Components/StarshipCard/index";
+
+const AboutContent: React.FC<HeroDetailsProps> = ({ aboutDetails }) => {
   return (
     <div>
       <div className="about__content">
         <Typography variant="h3" classes="header">
-          Correlian Scout
+          {aboutDetails.name}
         </Typography>
         <Typography variant="p" classes="content">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
@@ -67,9 +69,9 @@ const AboutContent = () => {
           </Typography>
         </div>
         <div className="category__body">
+          {/* <Card />
           <Card />
-          <Card />
-          <Card />
+          <Card /> */}
         </div>
       </div>
     </div>
