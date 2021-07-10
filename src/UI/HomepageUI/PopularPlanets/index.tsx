@@ -18,6 +18,7 @@ const PopularPlanets = () => {
       setSelectedplanets(newplanets);
     }
   }, [planets.fetched, planets.data]);
+
   return (
     <div className="category planets">
       <div className="category__header-container">
@@ -54,6 +55,7 @@ type PlanetCardProps = {
 const PlanetCard: React.FC<PlanetCardProps> = ({ image, title, planet }) => {
   const rndInt: number = Math.floor(Math.random() * 3);
 
+  const population = planet.population === "unknown" ? planet.population : (parseInt(planet.population).toLocaleString())
   return (
     <Link
       to={{
@@ -69,6 +71,10 @@ const PlanetCard: React.FC<PlanetCardProps> = ({ image, title, planet }) => {
         />
         <div className="planet__card--body">
           <Typography variant="h3">{planet.name}</Typography>
+          <div className="details">
+            <Typography variant="p">Climate: {planet.climate}</Typography>
+            <Typography variant="p">Population: {population}</Typography>
+          </div>
         </div>
       </div>
     </Link>

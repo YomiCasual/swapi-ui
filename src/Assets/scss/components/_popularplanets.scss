@@ -23,7 +23,18 @@
         font-size: 1.6rem;
         text-align: center;
         font-weight: 300;
-        background: linear-gradient();
+        font-weight: 700;
+      }
+
+      .details {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        margin-top: 1rem;
+        p {
+          font-size: 1.2rem;
+          text-transform: capitalize;
+        }
       }
     }
   }

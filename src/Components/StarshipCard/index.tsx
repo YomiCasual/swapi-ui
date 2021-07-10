@@ -37,8 +37,8 @@ const StarshipCard: React.FC<StarshipCardProps> = ({ starship, index = 1 }) => {
         <div className="card__body">
           <Typography variant="h3"> {starship.name}</Typography>
           <Typography variant="p">
-            The Ghost is a {starship.starship_class}, manufactured by the{" "}
-            {starship.manufacturer}
+            The {starship.name} is a {starship.starship_class}, manufactured by the{" "}
+            {starship.manufacturer} with cargo capacity of {starship.cargo_capacity}
           </Typography>
           <div className="button-group">
             <Link
