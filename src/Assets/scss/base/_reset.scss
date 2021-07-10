@@ -26,9 +26,29 @@ html {
 body {
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
-  margin-bottom: 10rem;
 }
 
 a {
   text-decoration: none;
+}
+
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  position: relative;
+  // opacity: 0;
+}
+
+.select__wrapper {
+  position: relative;
+
+  &::after {
+    content: "▼";
+    position: absolute;
+    font-size: 1rem;
+    top: 50%;
+    right: 1.4rem;
+    color: black;
+    transform: translateY(-50%);
+  }
 }

@@ -6,8 +6,6 @@ import Loader from "./Components/Loader";
 const Homepage = lazy(() => import("./Pages/Homepage"));
 const About = lazy(() => import("./Pages/About"));
 
-
-
 function App() {
   return (
     <>

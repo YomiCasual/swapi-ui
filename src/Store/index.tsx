@@ -11,7 +11,13 @@ const middleware = [thunk];
 const store = configureStore({
   reducer,
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(middleware),
+    getDefaultMiddleware({
+      serializableCheck: {
+        // Ignore these action types
+        ignoredActions: ["swapi/fetchAll/fulfilled"],
+        // Ignore these field paths in all actions
+      },
+    }).concat(middleware),
 });
 
 export default store;

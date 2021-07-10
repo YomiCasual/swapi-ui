@@ -2,7 +2,6 @@
   max-width: 65rem;
   margin: 5rem auto;
   color: $text-ash-title;
-  overflow: auto;
 
   .header {
     font-size: 2.4rem;
@@ -11,6 +10,7 @@
   .content__container {
     margin-top: 5rem;
     display: grid;
+    overflow: auto;
 
     // border: 1px solid black;
   }

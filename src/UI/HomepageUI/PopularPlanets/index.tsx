@@ -1,12 +1,8 @@
-import { useAppSelector } from "../../../Store/ReduxHooks";
 import { Fragment, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import Typography from "../../../Components/Typography/index";
-import PlanetImage1 from "../../../Assets/Images/planet-1.jpg";
-import PlanetImage2 from "../../../Assets/Images/planet-2.jpg";
-import PlanetImage3 from "../../../Assets/Images/planet-3.jpg";
 
-const PlanetImages = [PlanetImage1, PlanetImage2, PlanetImage3];
+import { useAppSelector } from "../../../Store/ReduxHooks";
+import PlanetCard from "../../../Components/PlanetCard";
+import Typography from "../../../Components/Typography";
 
 const PopularPlanets = () => {
   const { planets } = useAppSelector((state) => state.globalState);
@@ -27,14 +23,11 @@ const PopularPlanets = () => {
       <div className="category__body">
         {selectedplanets.map((planet, index) => (
           <Fragment key={index}>
-            <PlanetCard
-              image={PlanetImage1}
-              title="Correllia"
-              planet={planet}
-            />
+            <PlanetCard planet={planet} />
           </Fragment>
         ))}
       </div>
+
       <div>
         <button className="button view__more ">View More</button>
       </div>
@@ -43,41 +36,3 @@ const PopularPlanets = () => {
 };
 
 export default PopularPlanets;
-
-type PlanetCardProps = {
-  image: string;
-  title: string;
-  planet: any;
-};
-
-const PlanetCard: React.FC<PlanetCardProps> = ({ image, title, planet }) => {
-  const rndInt: number = Math.floor(Math.random() * 3);
-
-  const population =
-    planet.population === "unknown"
-      ? planet.population
-      : parseInt(planet.population).toLocaleString();
-  return (
-    <Link
-      to={{
-        pathname: "/about",
-        state: planet.url,
-      }}
-    >
-      <div className="planet__card">
-        <img
-          src={PlanetImages[rndInt]}
-          className="planet__card--image"
-          alt="planet"
-        />
-        <div className="planet__card--body">
-          <Typography variant="h3">{planet.name}</Typography>
-          <div className="details">
-            <Typography variant="p">Climate: {planet.climate}</Typography>
-            <Typography variant="p">Population: {population}</Typography>
-          </div>
-        </div>
-      </div>
-    </Link>
-  );
-};

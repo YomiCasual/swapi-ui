@@ -5,7 +5,7 @@ import Typography from "../../Components/Typography/index";
 import StarshipCard from "../../Components/StarshipCard/index";
 import { StarshipsData } from "../../Store/GlobalReducer/types";
 import { CaretLeftIcon, CaretRightIcon } from "../../Assets/Icons/index";
-const Starships = () => {
+const StarshipsPage = () => {
   const [starships, setStarships] = useState<any>({});
   const [fetched, setFetched] = useState(false);
   const [pageNum, setPageNum] = useState<any>(null);
@@ -72,4 +72,4 @@ const Starships = () => {
   );
 };
 
-export default Starships;
+export default StarshipsPage;

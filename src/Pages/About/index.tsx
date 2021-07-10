@@ -3,7 +3,8 @@ import axios from "axios";
 import HeroDetails from "../../UI/AboutUI/HeroDetails";
 import AboutContent from "../../UI/AboutUI/AboutContent/index";
 import { useLocation } from "react-router-dom";
-import Loader from '../../Components/Loader/index';
+import Loader from "../../Components/Loader";
+import Footer from "../../Components/Footer";
 
 const About = () => {
   const location = useLocation();
@@ -27,6 +28,7 @@ const About = () => {
       <div>
         <HeroDetails aboutDetails={aboutDetails} />
         <AboutContent aboutDetails={aboutDetails} />
+        <Footer />
       </div>
     );
   else return <Loader />;

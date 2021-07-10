@@ -12,9 +12,9 @@ const urls = [
 export const fetchAllData = createAsyncThunk("swapi/fetchAll", async () => {
   try {
     const requests = await urls.map((url) => axios.get(url));
-    let responses= await Promise.all(requests)
+    let responses = await Promise.all(requests);
 
-    return responses
+    return responses;
   } catch (err2) {
     console.log({ err2 });
   }
