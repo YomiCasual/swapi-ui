@@ -8,14 +8,12 @@ import { useEffect } from "react";
 const PopularStarships = () => {
   const { starships } = useAppSelector((state) => state.globalState);
   let [selectedStarships, setSelectedStarships] = useState<any[]>([]);
-  // console.log(starships)
+ 
 
   useEffect(() => {
-    if (starships.fetched) {
-      let newStarships = [...starships.data].slice(0, 6);
-      setSelectedStarships(newStarships);
-    }
-  }, [starships.fetched, starships.data]);
+    let newStarships = [...starships].slice(0, 6);
+    setSelectedStarships(newStarships);
+  }, [starships]);
 
   return (
     <div className="category starships">

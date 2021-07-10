@@ -13,11 +13,9 @@ const PopularPlanets = () => {
   let [selectedplanets, setSelectedplanets] = useState<any[]>([]);
 
   useEffect(() => {
-    if (planets.fetched) {
-      let newplanets = [...planets.data].slice(0, 6);
-      setSelectedplanets(newplanets);
-    }
-  }, [planets.fetched, planets.data]);
+    let newplanets = [...planets].slice(0, 6);
+    setSelectedplanets(newplanets);
+  }, [planets]);
 
   return (
     <div className="category planets">
@@ -55,7 +53,10 @@ type PlanetCardProps = {
 const PlanetCard: React.FC<PlanetCardProps> = ({ image, title, planet }) => {
   const rndInt: number = Math.floor(Math.random() * 3);
 
-  const population = planet.population === "unknown" ? planet.population : (parseInt(planet.population).toLocaleString())
+  const population =
+    planet.population === "unknown"
+      ? planet.population
+      : parseInt(planet.population).toLocaleString();
   return (
     <Link
       to={{

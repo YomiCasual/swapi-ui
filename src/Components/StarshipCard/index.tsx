@@ -8,7 +8,6 @@ import StarShip5 from "../../Assets/Images/starship-5.jpg";
 import StarShip6 from "../../Assets/Images/starship-6.jpg";
 import { ArrowBackIcon } from "../../Assets/Icons";
 import { StarshipsData } from "../../Store/GlobalReducer/types";
-import { BASE_URL } from "../../Store/Sagas";
 
 const StarshipImages: string[] = [
   StarShip1,
@@ -24,9 +23,7 @@ type StarshipCardProps = {
   starship: StarshipsData;
 };
 
-
 const StarshipCard: React.FC<StarshipCardProps> = ({ starship, index = 1 }) => {
-  // const getUrlParams = starship.url.split(BASE_URL)[1]
   const rndInt: number = Math.floor(Math.random() * 6);
   return (
     <div className="card">
@@ -37,8 +34,9 @@ const StarshipCard: React.FC<StarshipCardProps> = ({ starship, index = 1 }) => {
         <div className="card__body">
           <Typography variant="h3"> {starship.name}</Typography>
           <Typography variant="p">
-            The {starship.name} is a {starship.starship_class}, manufactured by the{" "}
-            {starship.manufacturer} with cargo capacity of {starship.cargo_capacity}
+            The {starship.name} is a {starship.starship_class}, manufactured by
+            the {starship.manufacturer} with cargo capacity of{" "}
+            {starship.cargo_capacity}
           </Typography>
           <div className="button-group">
             <Link

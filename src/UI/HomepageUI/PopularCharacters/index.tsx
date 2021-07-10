@@ -1,11 +1,11 @@
+import { Fragment, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Typography from "../../../Components/Typography";
 import Character1 from "../../../Assets/Images/character-1.jpg";
 import Character2 from "../../../Assets/Images/character-3.jpg";
 import Character3 from "../../../Assets/Images/character-2.jpg";
 import Character4 from "../../../Assets/Images/character-4.jpg";
 import { useAppSelector } from "../../../Store/ReduxHooks";
-import { Fragment, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 const CharacterImages = [Character1, Character2, Character3, Character4];
 
@@ -14,11 +14,9 @@ const PopularCharacters = () => {
   let [selectedcharacters, setSelectedcharacters] = useState<any[]>([]);
 
   useEffect(() => {
-    if (characters.fetched) {
-      let newcharacters = [...characters.data].slice(0, 4);
-      setSelectedcharacters(newcharacters);
-    }
-  }, [characters.fetched, characters.data]);
+    let newcharacters = [...characters].slice(0, 4);
+    setSelectedcharacters(newcharacters);
+  }, [characters]);
   return (
     <div className="category characters">
       <div className="category__header-container">
