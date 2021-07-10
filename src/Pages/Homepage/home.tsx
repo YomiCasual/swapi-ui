@@ -5,26 +5,29 @@ import PopularPlanets from "../../UI/HomepageUI/PopularPlanets";
 import { useAppDispatch, useAppSelector } from "../../Store/ReduxHooks";
 import Loader from "../../Components/Loader/index";
 import { fetchAllData } from "../../Store/Sagas";
+import Error from "../../Components/Error";
 
 const Home = () => {
   const dispatch = useAppDispatch();
 
-  const { fetched } = useAppSelector((state) => state.globalState);
+  const { status } = useAppSelector((state) => state.globalState);
 
   useEffect(() => {
-    if (!fetched) {
+    if (!status) {
       dispatch(fetchAllData());
     }
-  }, [dispatch, fetched]);
+  }, [dispatch, status]);
 
-  if (!fetched) return <Loader />;
-  return (
-    <div>
-      <PopularStarships />
-      <PopularPlanets />
-      <PopularCharacters />
-    </div>
-  );
+  if (status === "loading") return <Loader />;
+  else if (status === "failed") return <Error />;
+  else
+    return (
+      <div>
+        <PopularStarships />
+        <PopularPlanets />
+        <PopularCharacters />
+      </div>
+    );
 };
 
 export default Home;

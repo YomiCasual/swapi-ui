@@ -1,29 +1,39 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useLocation } from "react-router-dom";
+
+//@componetns
 import HeroDetails from "../../UI/AboutUI/HeroDetails";
 import AboutContent from "../../UI/AboutUI/AboutContent/index";
-import { useLocation } from "react-router-dom";
 import Loader from "../../Components/Loader";
 import Footer from "../../Components/Footer";
+import Error from "../../Components/Error";
 
 const About = () => {
   const location = useLocation();
   const [aboutDetails, setAboutDetails] = useState<any>(null);
-  const [fetched, setFetched] = useState(false);
+  const [status, setStatus] = useState<string | null>("loading");
 
   useEffect(() => {
     if (location.state) {
+      setStatus("loading");
       axios
         .get(location.state as string)
         .then((data) => {
           setAboutDetails(data.data);
-          setFetched(true);
+          setStatus("success");
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          setStatus("failed");
+        });
+    } else {
+      setStatus("failed");
     }
   }, [location.state]);
 
-  if (fetched)
+  if (status === "loading") return <Loader />;
+  else if (status === "failed") return <Error />;
+  else
     return (
       <div>
         <HeroDetails aboutDetails={aboutDetails} />
@@ -31,7 +41,6 @@ const About = () => {
         <Footer />
       </div>
     );
-  else return <Loader />;
 };
 
 export default About;

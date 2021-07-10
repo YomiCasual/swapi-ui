@@ -1,0 +1,42 @@
+.error__container {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+
+  .header {
+    font-size: 7rem;
+    font-weight: 900;
+    background: url("../../Images/hero-banner.jpg");
+    background-clip: text;
+    color: transparent;
+  }
+
+  .sub {
+    font-size: 2rem;
+    color: $tertiary-ash;
+    font-weight: 500;
+    margin-top: 0.5rem;
+  }
+
+  .btn__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    .home__btn {
+      margin-top: 3rem;
+      background: $primary-black;
+      color: $primary-white;
+      font-weight: 600;
+    }
+    .reload__btn {
+      margin-top: 3rem;
+      background: $primary-white;
+      color: $primary-black;
+      font-weight: 600;
+    }
+  }
+}

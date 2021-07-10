@@ -1,53 +1,40 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchAllData } from "../Sagas";
-import { StarshipsData } from "./types";
-
-// type StateProps = {
-//   data: []
-// };
+import { CharacterData, PlanetData, StarshipsData } from "./types";
 
 type initialStateProps = {
   starships: StarshipsData[];
-  planets: any;
-  characters: any;
-  fetched: boolean;
+  planets: PlanetData[];
+  characters: CharacterData[];
+  status: null | string;
 };
 
 const initialState: initialStateProps = {
   starships: [],
   characters: [],
   planets: [],
-  fetched: false,
+  status: null,
 };
 
 export const GlobalReducer = createSlice({
   name: "GlobalReducer",
   initialState,
   reducers: {
-    getStarships: (state, data: any) => {
-      //   state.starships = data;
-    },
+    getStarships: (state, data: any) => {},
   },
   extraReducers: {
     [fetchAllData.fulfilled.type]: (state, action) => {
       state.starships = action.payload[0].data.results;
       state.planets = action.payload[1].data.results;
       state.characters = action.payload[2].data.results;
-      state.fetched = true;
+      state.status = "success";
     },
-    // [fetchStarships.fulfilled.type]: (state, action) => {
-    //   state.starships.data = action.payload.results;
-
-    //   state.starships.fetched = true;
-    // },
-    // [fetchPlanets.fulfilled.type]: (state, action) => {
-    //   state.planets.data = action.payload.results;
-    //   state.planets.fetched = true;
-    // },
-    // [fetchCharacters.fulfilled.type]: (state, action) => {
-    //   state.characters.data = action.payload.results;
-    //   state.characters.fetched = true;
-    // },
+    [fetchAllData.pending.type]: (state) => {
+      state.status = "loading";
+    },
+    [fetchAllData.rejected.type]: (state) => {
+      state.status = "failed";
+    },
   },
 });
 

@@ -63,7 +63,7 @@ const BracketSvg = ({ classes }: IconType) => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path d="M64.5 2H2V119.5H64.5" stroke="white" stroke-width="3" />
+    <path d="M64.5 2H2V119.5H64.5" stroke="white" strokeWidth="3" />
   </svg>
 );
 
@@ -76,7 +76,7 @@ const NavigationIcon = ({ classes }: IconType) => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <circle cx="51.5" cy="51.5" r="49.5" stroke="white" stroke-width="4" />
+    <circle cx="51.5" cy="51.5" r="49.5" stroke="white" strokeWidth="4" />
     <path d="M40 51.5L58 38.0766L58 64.9234L40 51.5Z" fill="white" />
   </svg>
 );

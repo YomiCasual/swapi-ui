@@ -25,6 +25,11 @@ type StarshipCardProps = {
 
 const StarshipCard: React.FC<StarshipCardProps> = ({ starship, index = 1 }) => {
   const rndInt: number = Math.floor(Math.random() * 6);
+
+  const cargo_capacity =
+    starship.cargo_capacity === "unknown"
+      ? starship.cargo_capacity
+      : parseInt(starship.cargo_capacity).toLocaleString();
   return (
     <div className="card">
       <div className="card__image">
@@ -35,8 +40,7 @@ const StarshipCard: React.FC<StarshipCardProps> = ({ starship, index = 1 }) => {
           <Typography variant="h3"> {starship.name}</Typography>
           <Typography variant="p">
             The {starship.name} is a {starship.starship_class}, manufactured by
-            the {starship.manufacturer} with cargo capacity of{" "}
-            {starship.cargo_capacity}
+            the {starship.manufacturer} with cargo capacity of {cargo_capacity}
           </Typography>
           <div className="button-group">
             <Link
