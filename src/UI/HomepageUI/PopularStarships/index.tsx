@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 import { Fragment, useState } from "react";
 import Typography from "../../../Components/Typography";
 import StarshipCard from "../../../Components/StarshipCard";
 import { useAppSelector } from "../../../Store/ReduxHooks";
-import { useEffect,  } from "react";
+import { useEffect } from "react";
 
 const PopularStarships = () => {
   const { starships } = useAppSelector((state) => state.globalState);
@@ -12,7 +13,7 @@ const PopularStarships = () => {
   useEffect(() => {
     if (starships.fetched) {
       let newStarships = [...starships.data].slice(0, 6);
-      setSelectedStarships(newStarships)
+      setSelectedStarships(newStarships);
     }
   }, [starships.fetched, starships.data]);
 
@@ -31,7 +32,14 @@ const PopularStarships = () => {
         ))}
       </div>
       <div>
-        <button className="button view__more ">View More</button>
+        <Link
+          to={{
+            pathname: "/starships",
+            state: "https://swapi.dev/api/starships/?page=1",
+          }}
+        >
+          <button className="button view__more ">View More</button>
+        </Link>
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Logo from "./../../../Assets/Images/logo.png";
 import Typography from "../../../Components/Typography/index";
 import { SearchIcon } from "../../../Assets/Icons";
@@ -6,7 +7,9 @@ const Hero = () => {
   return (
     <div className="hero">
       <nav className="nav">
+        <Link to="/">
         <img src={Logo} alt="" className="nav__logo logo" />
+        </Link>
       </nav>
 
       <div className="hero__body">

@@ -9,16 +9,13 @@ export type HeroDetailsProps = {
 };
 
 const HeroDetails: React.FC<HeroDetailsProps> = ({ aboutDetails }) => {
-
   const getStringUrl = aboutDetails.url.match(/[^0-9]+/g)[0];
   const getNumUrl = parseInt(aboutDetails.url.match(/[0-9]+/g));
   const ValidNumUrl = isNaN(getNumUrl) || 0 ? 6 : getNumUrl;
 
   return (
-    <div 
-    
-    className="hero hero__details">
-      <Link to="/home">
+    <div className="hero hero__details">
+      <Link to="/">
         <nav className="nav">
           <img src={Logo} alt="" className="nav__logo logo" />
         </nav>

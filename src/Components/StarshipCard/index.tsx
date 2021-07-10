@@ -27,11 +27,11 @@ type StarshipCardProps = {
 
 const StarshipCard: React.FC<StarshipCardProps> = ({ starship, index = 1 }) => {
   // const getUrlParams = starship.url.split(BASE_URL)[1]
- 
+  const rndInt: number = Math.floor(Math.random() * 6);
   return (
     <div className="card">
       <div className="card__image">
-        <img src={StarshipImages[index]} alt="starships" />
+        <img src={StarshipImages[rndInt]} alt="starships" />
       </div>
       <div className="card__body-overlay">
         <div className="card__body">

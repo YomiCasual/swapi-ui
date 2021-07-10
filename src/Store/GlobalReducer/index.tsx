@@ -47,6 +47,7 @@ export const GlobalReducer = createSlice({
   extraReducers: {
     [fetchStarships.fulfilled.type]: (state, action) => {
       state.starships.data = action.payload.results;
+
       state.starships.fetched = true;
     },
     [fetchPlanets.fulfilled.type]: (state, action) => {

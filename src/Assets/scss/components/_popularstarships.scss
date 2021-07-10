@@ -75,3 +75,37 @@
   border-radius: 6px;
   text-transform: uppercase;
 }
+
+.pagination__button {
+  // border: 1px solid black;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    font-size: 1.8rem;
+    color: $text-ash-title;
+    margin-right: 2rem;
+  }
+
+  &--container {
+    border: 3px solid $primary-ash;
+    border-radius: 6px;
+  }
+
+  &--prev {
+    border-right: 3px solid $primary-ash !important;
+  }
+
+  .button-pag {
+    background: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    // color: $primary-ash;
+
+    outline: none !important;
+    // border: none;
+    cursor: pointer;
+  }
+}

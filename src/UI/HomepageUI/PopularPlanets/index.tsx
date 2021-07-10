@@ -18,7 +18,6 @@ const PopularPlanets = () => {
       setSelectedplanets(newplanets);
     }
   }, [planets.fetched, planets.data]);
-  console.log(planets);
   return (
     <div className="category planets">
       <div className="category__header-container">
