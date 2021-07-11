@@ -5,7 +5,6 @@
     width: 100%;
   }
   //   border: 1px solid black;
-
   &__image {
     position: relative;
     height: 25rem;
@@ -13,7 +12,6 @@
       width: 100%;
       object-fit: cover;
       height: 100%;
-      // position: absolute;
     }
   }
 
@@ -21,15 +19,10 @@
     background-color: $primary-ash;
     position: relative;
     width: 100%;
-    // height: 10rem;
   }
   &__body {
-    // position: absolute;
     background-color: $secondary-ash;
-    top: 0;
-    bottom: 1rem;
-    left: 1rem;
-    // width: 36rem;
+
     padding: 2rem 2rem 1rem 2rem;
 
     h3 {
@@ -40,17 +33,12 @@
       font-size: 1.4rem;
       line-height: 2.3rem;
       color: #7c7c7c;
-      
-      height: 9rem;
-   
-      // white-space: nowrap;
     }
 
     .button-group {
       margin-top: 1.5rem;
       margin-bottom: 1rem;
       text-decoration: none !important;
-      // text-align: right;
       display: flex;
       justify-content: flex-end;
     }
