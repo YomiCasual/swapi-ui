@@ -64,34 +64,41 @@ const CharactersPage = () => {
           </Typography>
         </div>
         <div className="filter__container">
-          <div className="filter__group select__wrapper">
+          <div className="filter__group ">
             <label>filter</label>
-            <select
-              onChange={handleGenderChange}
-              name="gender"
-              defaultValue="Gender"
-            >
-              <option disabled>Gender</option>
-              <option value="all">All</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-            </select>
+
+            <div className="select__wrapper">
+              <select
+                onChange={handleGenderChange}
+                name="gender"
+                defaultValue="Gender"
+              >
+                <option disabled>Gender</option>
+                <option value="all">All</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
           </div>
-          <div className="filter__group select__wrapper">
+          <div className="filter__group ">
             <label>View</label>
-            <select name="gender" defaultValue="View">
-              <option disabled>View</option>
-              <option value="all">Grid</option>
-              <option value="male">Column</option>
-            </select>
+            <div className="select__wrapper">
+              <select name="gender" defaultValue="View">
+                <option disabled>View</option>
+                <option value="all">Grid</option>
+                <option value="male">Column</option>
+              </select>
+            </div>
           </div>
         </div>
         <div className="category__body">
-          {filteredCharacters.results.map((character: CharacterData, index: number) => (
-            <Fragment key={index}>
-              <CharacterCard character={character} />
-            </Fragment>
-          ))}
+          {filteredCharacters.results.map(
+            (character: CharacterData, index: number) => (
+              <Fragment key={index}>
+                <CharacterCard character={character} />
+              </Fragment>
+            )
+          )}
         </div>
         <div className="pagination__button">
           <Typography variant="p">
