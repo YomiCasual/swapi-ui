@@ -1,6 +1,11 @@
 .characters {
   padding: 4rem 6rem 4rem 6rem !important;
 
+  // @include responsive($tablet) {
+  //   padding-left: 2rem !important;
+  //   padding-right: 2rem !important;
+  // }
+
   .category__body {
     column-gap: 2rem !important;
     row-gap: 5rem !important;
@@ -9,9 +14,19 @@
     height: 41rem;
     display: flex;
 
+    @include responsive($tablet) {
+      flex-direction: column;
+      height: 100%;
+    }
+
     &--image {
       width: 36rem;
       position: relative;
+
+      @include responsive($tablet) {
+        width: 100%;
+        height: 31rem;
+      }
 
       flex: none;
       img {
@@ -28,6 +43,10 @@
       flex-direction: column;
       justify-content: center;
 
+      @include responsive($tablet) {
+        width: 100%;
+      }
+
       .title {
         font-size: 1.8rem;
         color: $text-ash-title;
@@ -35,7 +54,7 @@
 
       .sub {
         font-size: 1.6rem;
-        text-transform: capitalize
+        text-transform: capitalize;
         // margin-top: 1rem;
       }
 

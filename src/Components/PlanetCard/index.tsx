@@ -18,13 +18,13 @@ const PlanetCard: React.FC<PlanetCardProps> = ({ planet }) => {
       ? planet.population
       : parseInt(planet.population).toLocaleString();
   return (
-    <Link
-      to={{
-        pathname: "/about",
-        state: planet.url,
-      }}
-    >
-      <div className="planet__card">
+    <div className="planet__card">
+      <Link
+        to={{
+          pathname: "/about",
+          state: planet.url,
+        }}
+      >
         <img
           src={PlanetImages[rndInt]}
           className="planet__card--image"
@@ -37,8 +37,8 @@ const PlanetCard: React.FC<PlanetCardProps> = ({ planet }) => {
             <Typography variant="p">Population: {population}</Typography>
           </div>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 };
 

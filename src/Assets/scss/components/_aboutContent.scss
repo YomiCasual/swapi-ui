@@ -3,6 +3,10 @@
   margin: 5rem auto;
   color: $text-ash-title;
 
+  @include responsive($tablet) {
+    padding: 0 1rem;
+  }
+
   .header {
     font-size: 2.4rem;
     font-weight: 700;

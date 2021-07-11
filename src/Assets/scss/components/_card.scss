@@ -1,5 +1,9 @@
 .card {
   width: 36rem;
+
+  @include responsive($mobile-l) {
+    width: 100%;
+  }
   //   border: 1px solid black;
 
   &__image {
@@ -25,7 +29,7 @@
     top: 0;
     bottom: 1rem;
     left: 1rem;
-    width: 36rem;
+    // width: 36rem;
     padding: 2rem 2rem 1rem 2rem;
 
     h3 {
