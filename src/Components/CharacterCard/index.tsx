@@ -17,7 +17,12 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ character }) => {
   return (
     <div className="character__card">
       <div className="character__card--image">
-        <img src={character.gender === "female" ? Character4 : CharacterImages[rndInt]} alt="actor" />
+        <img
+          src={
+            character.gender === "female" ? Character4 : CharacterImages[rndInt]
+          }
+          alt="actor"
+        />
       </div>
 
       <div className="character__card--body">

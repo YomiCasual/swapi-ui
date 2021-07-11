@@ -3,16 +3,20 @@ import { Switch, Route } from "react-router-dom";
 import "./App.scss";
 import Loader from "./Components/Loader";
 
-const Homepage = lazy(() => import("./Pages/Homepage"));
+const Homepage = lazy(() => import("./Pages/Homepage/"));
 const About = lazy(() => import("./Pages/About"));
+const StarshipsPage = lazy(() => import("./Pages/StarshipsPage"));
+const CharactersPage = lazy(() => import("./Pages/CharactersPage"));
 
 function App() {
   return (
     <>
       <Suspense fallback={<Loader />}>
         <Switch>
+          <Route exact path="/" component={Homepage} />
           <Route exact path="/about" component={About} />
-          <Route path="/" component={Homepage} />
+          <Route exact path="/starships" component={StarshipsPage} />
+          <Route exact path="/characters" component={CharactersPage} />
         </Switch>
       </Suspense>
     </>

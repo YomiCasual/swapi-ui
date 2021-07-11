@@ -1,27 +1,35 @@
-import { lazy, Suspense } from "react";
-import { Switch, Route } from "react-router-dom";
-import Hero from "../../UI/HomepageUI/Hero";
+import { useEffect } from "react";
+import PopularStarships from "../../UI/HomepageUI/PopularStarships";
+import PopularCharacters from "../../UI/HomepageUI/PopularCharacters";
+import PopularPlanets from "../../UI/HomepageUI/PopularPlanets";
+import { useAppDispatch, useAppSelector } from "../../Store/ReduxHooks";
 import Loader from "../../Components/Loader/index";
-import Footer from "../../Components/Footer/index";
+import { fetchAllData } from "../../Store/Sagas";
+import Error from "../../Components/Error";
+import Hero from '../../UI/HomepageUI/Hero/index';
 
-const Home = lazy(() => import("./home"));
-const StarshipsPage = lazy(() => import("./starships-page"));
-const CharactersPage = lazy(() => import("./characters-page"));
+const Home = () => {
+  const dispatch = useAppDispatch();
 
-function Homepage() {
-  return (
-    <>
-      <Hero />
-      <Suspense fallback={<Loader />}>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/starships" component={StarshipsPage} />
-          <Route exact path="/characters" component={CharactersPage} />
-        </Switch>
-      </Suspense>
-      <Footer />
-    </>
-  );
-}
+  const { status } = useAppSelector((state) => state.globalState);
 
-export default Homepage;
+  useEffect(() => {
+    if (!status) {
+      dispatch(fetchAllData());
+    }
+  }, [dispatch, status]);
+
+  if (status === "loading") return <Loader />;
+  else if (status === "failed") return <Error />;
+  else
+    return (
+      <div>
+        <Hero />
+        <PopularStarships />
+        <PopularPlanets />
+        <PopularCharacters />
+      </div>
+    );
+};
+
+export default Home;

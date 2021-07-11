@@ -3,12 +3,16 @@ import Logo from "./../../../Assets/Images/logo.png";
 import Typography from "../../../Components/Typography/index";
 import { SearchIcon } from "../../../Assets/Icons";
 
-const Hero = () => {
+type HeroProps = {
+  filterList?: (e: any) => void;
+};
+
+const Hero: React.FC<HeroProps> = ({ filterList }) => {
   return (
     <div className="hero">
       <nav className="nav">
         <Link to="/">
-        <img src={Logo} alt="" className="nav__logo logo" />
+          <img src={Logo} alt="" className="nav__logo logo" />
         </Link>
       </nav>
 
@@ -25,7 +29,9 @@ const Hero = () => {
         <div>
           <div className="input_group input">
             <SearchIcon classes="input__icon" />
+
             <input
+              onChange={filterList}
               type="text"
               className="input__field"
               placeholder="Enter search term"

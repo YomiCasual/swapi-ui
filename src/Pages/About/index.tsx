@@ -12,7 +12,7 @@ import Error from "../../Components/Error";
 const About = () => {
   const location = useLocation();
   const [aboutDetails, setAboutDetails] = useState<any>(null);
-  const [status, setStatus] = useState<string | null>("loading");
+  const [status, setStatus] = useState<string>("loading");
 
   useEffect(() => {
     if (location.state) {
