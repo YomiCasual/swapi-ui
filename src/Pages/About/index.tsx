@@ -4,7 +4,6 @@ import { useLocation } from "react-router-dom";
 
 //@componetns
 import Loader from "../../Components/Loader";
-import Footer from "../../Components/Footer";
 import Error from "../../Components/Error";
 import HeroDetails from "../../UI/AboutUI/HeroDetails";
 import AboutContent from "../../UI/AboutUI/AboutContent/index";
@@ -38,7 +37,6 @@ const About = () => {
       <div>
         <HeroDetails aboutDetails={aboutDetails} />
         <AboutContent aboutDetails={aboutDetails} />
-        <Footer />
       </div>
     );
 };

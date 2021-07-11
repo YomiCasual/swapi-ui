@@ -1,13 +1,32 @@
 .planets {
+  .test_card {
+    background: rgb(64, 175, 255);
+
+    background: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    color: #fff;
+    font-weight: 500;
+    height: 300px;
+    max-height: 100vh;
+    // width: 20rem;
+    border: 2px solid black;
+
+    background: linear-gradient(128deg, rgba(64, 175, 255, 1) 0%, #3f61ff 100%);
+  }
   .planet__card {
-    width: 36rem;
-    height: 46rem;
+    // width: 36rem;
+    // height: 46rem;
     margin: 0 auto !important;
     position: relative;
 
+    &--image {
+      // width: 36rem;
+    }
     img {
-      @include object-cover // position: absolute;
-;
+      @include object-cover; // position: absolute;
     }
 
     &--body {

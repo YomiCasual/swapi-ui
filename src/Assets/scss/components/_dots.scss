@@ -1,0 +1,23 @@
+.dots {
+  display: flex;
+  padding: 10px 0;
+  justify-content: center;
+  margin-top: 2rem;
+  .dot {
+    border: 2px solid $text-ash-title;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: white;
+    border-radius: 50%;
+    margin: 0 5px;
+    padding: 5px;
+    cursor: pointer;
+
+    &.active {
+      background: $text-ash-title;
+    }
+  }
+  &:focus {
+    outline: none;
+  }
+}

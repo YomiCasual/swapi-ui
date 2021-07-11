@@ -23,7 +23,7 @@ const CharactersPage = () => {
       setStatus("loading");
       const newLocation: string = (location.state as string) || "";
       axios
-        .get(newLocation)
+    .get(newLocation)
         .then((data) => {
           setcharacters(data.data);
           setFilteredCharacters(data.data);

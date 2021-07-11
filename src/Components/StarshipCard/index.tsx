@@ -10,6 +10,7 @@ import StarShip5 from "../../Assets/Images/starship-5.jpg";
 import StarShip6 from "../../Assets/Images/starship-6.jpg";
 import { ArrowBackIcon } from "../../Assets/Icons";
 import { StarshipsData } from "../../Store/GlobalReducer/types";
+import { text_truncate } from "../../Helpers/textTruncate";
 
 const StarshipImages: string[] = [
   StarShip1,
@@ -33,6 +34,9 @@ const StarshipCard: React.FC<StarshipCardProps> = ({ starship }) => {
       ? starship.cargo_capacity
       : parseInt(starship.cargo_capacity).toLocaleString();
 
+  const content = `The ${starship.name} is a ${starship.starship_class}, manufactured by
+ the ${starship.manufacturer} with cargo capacity of ${cargo_capacity}`;
+
   return (
     <div className="card">
       <div className="card__image">
@@ -41,10 +45,7 @@ const StarshipCard: React.FC<StarshipCardProps> = ({ starship }) => {
       <div className="card__body-overlay">
         <div className="card__body">
           <Typography variant="h3"> {starship.name}</Typography>
-          <Typography variant="p">
-            The {starship.name} is a {starship.starship_class}, manufactured by
-            the {starship.manufacturer} with cargo capacity of {cargo_capacity}
-          </Typography>
+          <Typography variant="p">{text_truncate(content, 150)}</Typography>
           <div className="button-group">
             <Link
               to={{

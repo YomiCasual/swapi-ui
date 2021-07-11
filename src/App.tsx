@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Switch, Route } from "react-router-dom";
 import "./App.scss";
+import Footer from "./Components/Footer";
 import Loader from "./Components/Loader";
 
 const Homepage = lazy(() => import("./Pages/Homepage/"));
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/characters" component={CharactersPage} />
         </Switch>
       </Suspense>
+      <Footer />
     </>
   );
 }
