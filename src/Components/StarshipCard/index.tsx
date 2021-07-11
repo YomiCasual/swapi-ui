@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+
+//@components
 import Typography from "../Typography";
 import StarShip1 from "../../Assets/Images/starship-1.jpg";
 import StarShip2 from "../../Assets/Images/starship-2.jpg";
@@ -23,13 +25,14 @@ type StarshipCardProps = {
   starship: StarshipsData;
 };
 
-const StarshipCard: React.FC<StarshipCardProps> = ({ starship, index = 1 }) => {
+const StarshipCard: React.FC<StarshipCardProps> = ({ starship }) => {
   const rndInt: number = Math.floor(Math.random() * 6);
 
   const cargo_capacity =
     starship.cargo_capacity === "unknown"
       ? starship.cargo_capacity
       : parseInt(starship.cargo_capacity).toLocaleString();
+
   return (
     <div className="card">
       <div className="card__image">

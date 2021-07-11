@@ -2,14 +2,14 @@ import { Fragment, useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useLocation } from "react-router-dom";
 
-// @icomponents
-import Typography from "../../Components/Typography";
+// @components
 import { CaretLeftIcon, CaretRightIcon } from "../../Assets/Icons";
+import Typography from "../../Components/Typography";
 import CharacterCard from "../../Components/CharacterCard";
 import Loader from "../../Components/Loader/";
 import Error from "../../Components/Error";
-import Hero from "../../UI/HomepageUI/Hero/";
 import { CharacterData } from "../../Store/GlobalReducer/types";
+import Hero from "../../UI/HomepageUI/Hero/";
 
 const CharactersPage = () => {
   const [characters, setcharacters] = useState<any>({});

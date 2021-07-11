@@ -1,4 +1,6 @@
 import { Link, useHistory } from "react-router-dom";
+
+//@components
 import Typography from "../Typography";
 
 const Error = () => {

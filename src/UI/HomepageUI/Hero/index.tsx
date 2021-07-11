@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
-import Logo from "./../../../Assets/Images/logo.png";
+
+//@components
 import Typography from "../../../Components/Typography/index";
+import Logo from "../../../Assets/Images/logo.png";
 import { SearchIcon } from "../../../Assets/Icons";
 
 type HeroProps = {

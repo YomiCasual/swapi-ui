@@ -1,8 +1,9 @@
-import Logo from "./../../../Assets/Images/logo.png";
-import Typography from "../../../Components/Typography";
-import { IconType } from "../../../Assets/Icons";
 import { Link } from "react-router-dom";
-// import { SearchIcon } from "../../Assets/Icons";
+
+//@components
+import { IconType } from "../../../Assets/Icons";
+import Typography from "../../../Components/Typography";
+import Logo from "./../../../Assets/Images/logo.png";
 
 export type HeroDetailsProps = {
   aboutDetails: any;

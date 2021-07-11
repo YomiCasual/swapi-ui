@@ -1,12 +1,15 @@
 import { useEffect } from "react";
+
+
+// @components
+import Error from "../../Components/Error";
+import Loader from "../../Components/Loader/index";
+import { useAppDispatch, useAppSelector } from "../../Store/ReduxHooks";
+import { fetchAllData } from "../../Store/Sagas";
+import Hero from '../../UI/HomepageUI/Hero';
 import PopularStarships from "../../UI/HomepageUI/PopularStarships";
 import PopularCharacters from "../../UI/HomepageUI/PopularCharacters";
 import PopularPlanets from "../../UI/HomepageUI/PopularPlanets";
-import { useAppDispatch, useAppSelector } from "../../Store/ReduxHooks";
-import Loader from "../../Components/Loader/index";
-import { fetchAllData } from "../../Store/Sagas";
-import Error from "../../Components/Error";
-import Hero from '../../UI/HomepageUI/Hero/index';
 
 const Home = () => {
   const dispatch = useAppDispatch();

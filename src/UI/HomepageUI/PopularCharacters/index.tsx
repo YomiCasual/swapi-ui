@@ -1,8 +1,10 @@
 import { Fragment, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Typography from "../../../Components/Typography";
 
 import { useAppSelector } from "../../../Store/ReduxHooks";
+
+//@components
+import Typography from "../../../Components/Typography";
 import CharacterCard from "../../../Components/CharacterCard";
 
 const PopularCharacters = () => {

@@ -1,6 +1,5 @@
 import Typography from "../../../Components/Typography/index";
 import { HeroDetailsProps } from "../HeroDetails";
-// import Card from "../../../Components/StarshipCard/index";
 
 const AboutContent: React.FC<HeroDetailsProps> = ({ aboutDetails }) => {
   const { name, ...rest } = aboutDetails;
@@ -26,9 +25,7 @@ const AboutContent: React.FC<HeroDetailsProps> = ({ aboutDetails }) => {
           </Typography>
         </div>
         <div className="category__body">
-          {/* <Card />
-          <Card />
-          <Card /> */}
+     
         </div>
       </div>
     </div>

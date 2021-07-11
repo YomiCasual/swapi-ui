@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+
+//@components
 import Typography from "../Typography";
 import PlanetImage1 from "../../Assets/Images/planet-1.jpg";
 import PlanetImage2 from "../../Assets/Images/planet-2.jpg";
@@ -17,6 +19,7 @@ const PlanetCard: React.FC<PlanetCardProps> = ({ planet }) => {
     planet.population === "unknown"
       ? planet.population
       : parseInt(planet.population).toLocaleString();
+
   return (
     <div className="planet__card">
       <Link
