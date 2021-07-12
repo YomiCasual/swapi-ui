@@ -1,4 +1,7 @@
 .planets {
+  animation: slideRight 4s linear both;
+  animation-delay: 2s;
+
   .test_card {
     background: rgb(64, 175, 255);
 

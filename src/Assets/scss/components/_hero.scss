@@ -20,6 +20,7 @@
   }
   .nav__logo {
     margin-top: 1rem;
+    animation: slideDown 5s linear both;
   }
 
   &__sub {
@@ -29,6 +30,8 @@
     width: 47rem;
     text-align: center;
     line-height: 3rem;
+
+    // animation-fill-mode: backwards;
 
     @include responsive($mobile-l) {
       width: 100%;
@@ -45,6 +48,8 @@
     flex-direction: column;
     // border: 1px solid white;
     padding-bottom: 6rem;
+    animation: slideup 4s linear both;
+    animation-delay: 1s;
 
     .header {
       display: flex;
@@ -104,3 +109,5 @@
     }
   }
 }
+
+
